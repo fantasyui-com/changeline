@@ -1,0 +1,27 @@
+{
+  "name": "changeline",
+  "version": "1.0.0",
+  "description": "Search and replace in lines of files across directories.",
+  "main": "index.js",
+  "bin": {
+    "changeline": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fantasyui-com/changeline.git"
+  },
+  "author": "fantasyui-com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fantasyui-com/changeline/issues"
+  },
+  "homepage": "https://github.com/fantasyui-com/changeline#readme",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "mkdirp": "^0.5.1",
+    "shortid": "^2.2.6"
+  }
+}
