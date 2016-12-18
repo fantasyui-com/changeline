@@ -10,3 +10,8 @@ example: find . -name test.html -print | changeline -t transformers.js -r -c;
 Changeline uses es6 functions for searching an replacing, see transformers.js
 
 Changeline makes backups see --help
+
+
+### MIT License
+
+Copyright (c) 2016 Captain Fantasy
