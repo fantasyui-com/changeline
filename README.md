@@ -1,6 +1,16 @@
 # changeline
 Search and replace in lines of files across directories.
 
+Changeline is your basic file search and replace. But it goes beyond regular
+expressions and paths. You must submit a list of files via STDIN, so it is up to you
+to select a directory scan program. You can use UNIX find with a *.html wildcard for example.
+
+Furthermore, there is no question about matches spanning lines. Changeline simply sees one line at a time. It uses node readline under the hood.
+
+Finally, changeline is a precision device aimed at altering lines of code without
+the need for AST processing. You can for example target CSS Class Names in .css/.html
+and .js/es6 files, and it will plow through ES7 and CSS4 and whatever else comes its way.
+
 ## Installation
 [changeline](https://www.npmjs.com/package/changeline) is a command line program, and it is installed via [npm](https://www.npmjs.com) which comes along with [node](https://nodejs.org).
 Please install [node](https://nodejs.org) first, and then run ```npm install -g changeline``` to get changeline onto your system.
@@ -41,12 +51,32 @@ Usage: changeline [options]
       -V, --version              output the version number
 
       -v, --verbose              Make changeline verbose
-      -c, --cas                  Make cas backup before replacement.
-      --cas-home [path]          Path of cas backups
-      -b, --backup               Make backup before replacement.
-      --backup-extension [ext]   Extension to use for backup files
-      -r, --replace              Perform replacement.
-      -t, --transformers [path]  Transformer module.
+
+The CAS backup concept is similar to [Content Addressable Storage](https://en.wikipedia.org/wiki/Content-addressable_storage) prior to
+altering a file a copy is saved in ~/.changeline a simple index keeps track of
+hashes, timestamps and original file locations.
+
+      -c, --cas                  Make cas backup before replacement. (recommended)
+      --cas-home [path]          Path of cas backups (optional)
+
+A plain old filename.ext.bak is available as well.
+      -b, --backup               Make backup before replacement. (optional)
+      --backup-extension [ext]   Extension to use for backup files (optional)
+
+You must use the -r/-t flags to do useful things:
+
+      -r, --replace              Perform replacement (required for actual replacement)
+      -t, --transformers [path]  Transformer module. (required for specifying what to replace)
+
+The transformer format is ES6 by default and very easy to manage:
+
+    module.exports = [
+      {
+        description: "Update Bort to Bart.",
+        search: line => line === 'Bort', // return truthy value to trigger replace
+        replace: line => 'Bart', // return updated line content
+      },
+    ]
 
 
 ## Features and Concepts
@@ -72,4 +102,4 @@ github: https://github.com/fantasyui-com/changeline
 
 ## MIT License
 
-Copyright (c) 2016 Captain Fantasy
+Written by Captain Fantasy, Copyright (c) 2016 FantasyUI
