@@ -63,13 +63,7 @@ Changeline makes backups see --help
 
 A quick non-destructive one-liner, run it in changeline's directory:
 
-```cp test.html test-tmp.html;
-echo -e "\nBEFORE";
-cat test-tmp.html; echo;
-find . -name test-tmp.html -print | ./index.js -v -r -c -t ./test-transformers.js;
-echo -e "\nAFTER";
-cat test-tmp.html; echo;
-rm test-tmp.html;```
+```cp test.html test-tmp.html; echo -e "\nBEFORE"; cat test-tmp.html; echo; find . -name test-tmp.html -print | ./index.js -v -r -c -t ./test-transformers.js; echo -e "\nAFTER"; cat test-tmp.html; echo; rm test-tmp.html;```
 
 ## Links
 
