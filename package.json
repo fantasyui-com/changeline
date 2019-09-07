@@ -22,6 +22,6 @@
   "dependencies": {
     "commander": "^2.9.0",
     "mkdirp": "^0.5.1",
-    "shortid": "^2.2.6"
+    "shortid": "^2.2.15"
   }
 }
