@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/fantasyui-com/changeline#readme",
   "dependencies": {
-    "commander": "^2.9.0",
+    "commander": "^2.20.3",
     "mkdirp": "^0.5.1",
     "shortid": "^2.2.15"
   }
