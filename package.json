@@ -1,6 +1,6 @@
 {
   "name": "changeline",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Search and replace in lines of files across directories.",
   "main": "index.js",
   "bin": {
